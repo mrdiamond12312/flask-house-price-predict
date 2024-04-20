@@ -6,6 +6,6 @@ install:
 	py -3.9 -m pip install -r requirements.txt
 
 run:
-	py -3.9 manage.py run
+	py -3.9 manage.py
 
 all: install run
