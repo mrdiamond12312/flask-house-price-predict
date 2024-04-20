@@ -8,4 +8,6 @@ install:
 run:
 	py -3.9 manage.py run
 
-all: install run
+all: 
+	commit-linter install
+	install run
