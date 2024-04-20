@@ -3,7 +3,7 @@ from flask_restx import Resource
 
 from src.modules.price.dto import PriceDto
 
-from src.modules.price.service import predictHousePrice
+from src.modules.price.service import predictHousePriceUsingANN, predictHousePriceUsingLR
 
 api = PriceDto.api
 requestDto = PriceDto.requestParser
@@ -22,11 +22,10 @@ class PricePredict(Resource):
         # predict = model.predict(a)
 
         if (modelType == 'ann'):
-            predict = predictHousePrice(params)
-            return {'price': float(predict[0][0])}
+            predict = predictHousePriceUsingANN(params)
+            return {'price': float(predict)}
 
         if (modelType == 'linear'):
-            return {'price': 1}
-        
-        predict = predictHousePrice(params)
-        return {'price': float(predict[0][0])}
+            predict = predictHousePriceUsingLR(params)
+            print(predict)
+            return {'price': float(predict)}

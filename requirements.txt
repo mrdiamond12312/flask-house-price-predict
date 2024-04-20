@@ -29,3 +29,4 @@ scikit-learn==1.2.2
 pandas
 commit-linter
 gunicorn==19.7.1
+joblib===1.4.0
