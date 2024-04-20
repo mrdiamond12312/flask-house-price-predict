@@ -1,3 +1,5 @@
+![image](https://github.com/mrdiamond12312/flask-house-price-predict/assets/102137001/39f33e73-79cb-418b-8b56-39899ccc77e0)
+
 ## House Prediction Service
 #### Using Py3.9 Flask as driver
 This project is to predict house price based on provided information. [Refs here](https://www.kaggle.com/code/tomasmantero/predicting-house-prices-keras-ann)
