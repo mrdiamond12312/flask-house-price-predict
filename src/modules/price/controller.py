@@ -11,11 +11,22 @@ priceDto = PriceDto.price
 
 
 @api.route('/predict')
-class PricePredict(Resource):        
-    
+class PricePredict(Resource):
+
     @api.expect(requestDto)
     def get(self):
-        params = [float(False if value == 'false' else True if value == 'true' else value) for key, value in request.args.to_dict(flat=True).items()]
+        args = request.args.to_dict(flat=True)
+        modelType = args.pop('model', None)
+        params = [float(False if value == 'false' else True if value == 'true' else value)
+                  for key, value in args.items()]
         # predict = model.predict(a)
+
+        if (modelType == 'ann'):
+            predict = predictHousePrice(params)
+            return {'price': float(predict[0][0])}
+
+        if (modelType == 'linear'):
+            return {'price': 1}
+        
         predict = predictHousePrice(params)
         return {'price': float(predict[0][0])}

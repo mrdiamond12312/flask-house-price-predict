@@ -1,0 +1,16 @@
+version: "3"
+
+networks:
+  api-network:
+    driver: bridge
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    networks:
+      - api-network
+    restart: always

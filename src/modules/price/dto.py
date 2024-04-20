@@ -1,10 +1,18 @@
 from flask_restx import Namespace, fields
+from enum import Enum
 
-
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
 class PriceDto:
     api = Namespace('price', description='house price prediction operations')
 
     requestParser = api.parser()
+    requestParser.add_argument(
+        'model', required=True, type=str, default=1,
+        help="Kind of Model to process",choices=("ann", "linear")
+    ),
     requestParser.add_argument(
         'bedrooms', required=False, type=int, default=1,
         help="Number of bedrooms in the house (default: 1)"
