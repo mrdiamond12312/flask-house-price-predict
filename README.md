@@ -8,6 +8,7 @@ This project is to predict house price based on provided information. [Refs here
 - [For data analysis purpose](https://colab.research.google.com/drive/1__HiYwKwqUVDVoIU-e313mizACdZJgDh?usp=sharing)
 - [For Linear Regression Model](https://colab.research.google.com/drive/1iP2gogG4bO9fwYA3hZSKv4zlPLYkRqjH?usp=sharing)
 - [For Neural Network - ANN Model](https://colab.research.google.com/drive/1hmGd36qDXICliUlk6bfONlB7u9I7Nm_c?usp=sharing)
+- [Compare the 2 model with logaric transformation to scale down precision](https://colab.research.google.com/drive/1floWWRwZkmJajq9j-208zQU0QyTyYRVc?usp=sharing)
 
 ### Terminal Commands
 > [!IMPORTANT]
